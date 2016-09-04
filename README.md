@@ -6,3 +6,7 @@ Using Xbee-Arrduino library for this project.
 	- ATRouter_UNOV1 : sử dụng cho Arduino UNO và XBee Router
 	- ATEndDevice_UNOV1 : sử dụng cho Arduino UNO và XBee End Device 
 
++ Folder : TxRx_Exam - trong folder này chứa các sketch dùng cho việc truyền nhận dữ liệu giữa các module XBee. Trong mỗi sketch đều có comment giới thiệu cho sketch đó. 
+	- Tx_Xbee : cài đặt cho End Device với Arduino UNO, tuy nhiên hoàn toàn có thể sử dụng cho : Coordinator, Router. 
+	- Rx_Xbee : cài đặt cho Coordinator với Arduino Lenador, tuy nhiên hoàn toàn có thể sử dụng cho : Router, End Device.  
+
