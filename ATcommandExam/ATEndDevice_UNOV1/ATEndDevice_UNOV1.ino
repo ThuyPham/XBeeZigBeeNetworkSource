@@ -67,8 +67,6 @@
   + OI command : Read the operating 16-bit PAN ID
   + MY command : Get the 16 bit address of the module.
   + MP command : 16 bit Parent Network Address. Get the 16-bit parent network address of the module. 
-  + NC command : Number of Children : Read the number of end device children that have..
-                ..joined to the device. This command returns the number of child table entries currently in use.
   + PL command : Power level : select/read the power level at which the RF module transmits conducted.
 -------------------------------
 
@@ -118,8 +116,6 @@ uint8_t panId16Cmd[] = {'O','I'};
 uint8_t netaddCmd[] = {'M','Y'};
 // 16 bit parent address
 uint8_t parnetaddCmd[] = {'M','P'};
-// Number of Children 
-uint8_t numchilCmd[] = {'N','C'};
 // Power level
 uint8_t powlev[] = {'P','L'};
 
@@ -181,10 +177,6 @@ void loop(){
 
   // read 16 bit parent address
   eAtRequest.setCommand(parnetaddCmd);
-  sendAtCommand();
-
-  // read Number of Children
-  eAtRequest.setCommand(numchilCmd);
   sendAtCommand();
 
   // read Power level 
