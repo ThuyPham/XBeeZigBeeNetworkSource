@@ -39,7 +39,8 @@
 
 // Create an XBee object at the top of sketch
 XBee coordinator = XBee();
-
+// SH + SL Address of Sender Xbee 
+XBeeAddress64 addrRemote64 = XBeeAddress64(0x0013A200, 0x00000000);
 // RF module status messages are sent from the module in response to specific conditions
 ModemStatusResponse cStatus = ModemStatusResponse();
 // create response objects 
@@ -87,7 +88,14 @@ void loop() {
             	//sender didn't get an ACK
             	Serial.println("Receive an ZB Xbee packet!");
             }
-
+            // get PAN 64bit address  of sender xbee
+            addrRemote64 = rx.getRemoteAddress64();
+            Serial.print("64 bit address of sender xbee = 0x");
+            Serial.print(addrRemote64.getMsb(), HEX);
+            Serial.print(" ");
+            Serial.print(addrRemote64.getLsb(), HEX);
+            Serial.println(" "); 
+            
             //read data payload
             uint8_t dataLength = rx.getDataLength();
             Serial.print("Data length = ");
